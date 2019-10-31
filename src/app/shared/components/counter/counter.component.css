@@ -1,0 +1,77 @@
+:host {
+  display: inline-block;
+  margin: 0 10px 10px;
+}
+#counter,
+.counter,
+.time-counter {
+  width: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.counter {
+  width: 100px;
+}
+.counter-btn {
+  width: 14px;
+  height: 14px;
+  border: none;
+  cursor: pointer;
+}
+.counter-btn.minus {
+  background: url(../../../../assets/icons/minus-icon.svg) no-repeat 0 50%;
+}
+.counter-btn.plus {
+  background: url(../../../../assets/icons/plus.svg) no-repeat 0 0;
+}
+#counter input {
+  border: none;
+  border-bottom: 1px solid #D6D6D6;
+  width: 50px;
+  color: #494949;
+  font-size: 16px;
+  line-height: 40px;
+  text-align: center;
+}
+#counter input:disabled {
+  color: #494949;
+}
+.input-holder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.input-holder span {
+  margin-top: 10px;
+  color: #494949;
+  font-size: 12px;
+  line-height: 16px;
+}
+.separator {
+  display: inline-block;
+  margin: 0 10px;
+  background: url(../../../../assets/icons/two-vertical-dots.svg) no-repeat 0 0;
+}
+.disable .counter-btn {
+  cursor: default;
+}
+.disable .counter-btn.minus {
+  background: url(../../../../assets/icons/minus-icon-grey.svg) no-repeat 0 50%;
+}
+.disable .counter-btn.plus {
+  background: url(../../../../assets/icons/plus-grey.svg) no-repeat 0 0;
+}
+
+::-webkit-input-placeholder {
+  color: #D6D6D6;
+}
+::-moz-placeholder {
+  color: #D6D6D6;
+}
+:-ms-input-placeholder {
+  color: #D6D6D6;
+}
+::placeholder {
+  color: #D6D6D6;
+}

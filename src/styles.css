@@ -1,0 +1,398 @@
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import '~ngx-toastr/toastr.css';
+@font-face {
+  font-family: 'Red Hat Text';
+  src: url('./assets/fonts/RedHatText-Regular.eot');
+  src: url('./assets/fonts/RedHatText-Regular.eot?#iefix') format('embedded-opentype'),
+  url('./assets/fonts/RedHatText-Regular.woff2') format('woff2'),
+  url('./assets/fonts/RedHatText-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Red Hat Medium Text';
+  src: url('./assets/fonts/RedHatText-Medium.eot');
+  src: url('./assets/fonts/RedHatText-Medium.eot?#iefix') format('embedded-opentype'),
+  url('./assets/fonts/RedHatText-Medium.woff2') format('woff2'),
+  url('./assets/fonts/RedHatText-Medium.woff') format('woff'),
+  url('./assets/fonts/RedHatText-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  width: 100%;
+  min-width: 920px;
+  background: #fff;
+  font: 16px/18px 'Red Hat Text', arial, helvetica, sans-serif;
+  color: #B2B2B2;
+  padding: 0;
+}
+#wrapper {
+  width: 100%;
+  height: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+h1, h2 {
+  font: 36px/38px 'Red Hat Text', arial, helvetica, sans-serif;
+  color: #494949;
+  margin: 0 0 20px;
+}
+h3 {
+  font: 32px/36px 'Red Hat Text', arial, helvetica, sans-serif;
+  color: #494949;
+  margin: 0 0 10px;
+}
+h4 {
+  font: 28px/34px 'Red Hat Text', arial, helvetica, sans-serif;
+  color: #494949;
+  margin: 0 0 20px;
+  display: flex;
+  align-items: center;
+}
+.title,
+.success {
+  font: 14px/18px 'Red Hat Text', arial, helvetica, sans-serif;
+  display: block;
+  margin-bottom: 10px;
+}
+button[type=submit],
+button[type=button] {
+  width: 150px;
+  border: none;
+  border-radius: 20px;
+  background-color: #6AA1F3;
+  color: #fff;
+  font: 16px/18px 'Red Hat Text', arial, helvetica, sans-serif;
+  padding: 10px 10px 10px 30px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color .3s linear;
+}
+button[type=submit].icon:before,
+button[type=button].icon:before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 12px;
+  width: 16px;
+  height: 13px;
+  background: url(./assets/icons/email.svg) no-repeat 0, 0;
+}
+button[type=submit]:hover,
+button[type=button]:hover {
+  background-color: #0550c0;
+}
+button:focus {
+  outline: none;
+}
+button[type=button].icon.back-btn {
+  margin-top: 60px;
+}
+button[type=button].icon.back-btn:before {
+  background: url(./assets/icons/arrow-back.svg) no-repeat 0 50%;
+  height: 16px;
+}
+button[type=submit].icon.save:before {
+  background: url(./assets/icons/save.svg) no-repeat 0 50%;
+  height: 16px;
+}
+.back {
+  display: inline-block;
+  background: url(./assets/icons/arrow-back.svg) no-repeat 0 50%;
+  cursor: pointer;
+  padding-left: 25px;
+  color: #fff !important;
+  font: 16px/19px 'Red Hat Medium Text', arial, helvetica, sans-serif;
+}
+input:focus {
+  outline: none;
+}
+/* table styles */
+.tabulator {
+  background: none;
+  border-color: #D6D6D6;
+  overflow-y: auto;
+}
+.tabulator .tabulator-header .tabulator-col {
+  border-right: 1px solid #D6D6D6;
+  background: #424D5E;
+  color: #fff;
+}
+.tabulator .tabulator-tableHolder {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.tabulator .tabulator-tableHolder .tabulator-table {
+  color: #494949;
+}
+.tabulator-row .tabulator-cell {
+  padding: 10px;
+  font-size: 14px;
+  line-height: 18px;
+}
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content {
+  padding: 10px;
+  font-size: 16px;
+  line-height: 21px;
+}
+.tabulator-row.tabulator-row-even {
+  background-color: #fafcfc;
+}
+.tabulator-row.tabulator-selectable:hover {
+  background-color: #d9e5e5;
+}
+.tabulator .tabulator-header .tabulator-col.tabulator-sortable:hover {
+  background-color: #578cd6;
+}
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-arrow {
+  background: url(./assets/icons/sort-a-to-z.svg) no-repeat 0 50%;
+  width: 16px;
+  height: 16px;
+  border: none;
+  top: 13px;
+}
+.tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort="none"] .tabulator-col-content .tabulator-arrow {
+  border: none;
+}
+.tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort="asc"] .tabulator-col-content .tabulator-arrow {
+  border: none;
+  background: url(./assets/icons/sort-a-to-z.svg) no-repeat 0 50%;
+}
+.tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort="desc"] .tabulator-col-content .tabulator-arrow {
+  border: none;
+  background: url(./assets/icons/sort-z-to-a.svg) no-repeat 0 50%;
+}
+/* table styles end */
+.form-element input[type=text],
+.input-holder input[type=text] {
+  border: none;
+  border-bottom: 1px solid #B2B2B2;
+  width: 100%;
+  text-align: center;
+  font: 16px/40px 'Red Hat Text', arial, helvetica, sans-serif;
+  background: transparent;
+}
+input[type=text]:focus {
+  outline: none;
+}
+.form-element.icon-input input[type=text] {
+  padding-left: 40px;
+  background: url(./assets/icons/calendar.svg) no-repeat 10px 50%;
+}
+hr {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+/**
+  hide all fields in org-chart edit menu except name
+ */
+.edit-fields > div {
+  display: none;
+}
+.edit-fields > div:nth-child(1) {
+  display: block;
+}
+.analytic {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 250px;
+  border-radius: 5px;
+  color: #fff !important;
+  font: 16px/21px 'Red Hat Medium Text', arial, helvetica, sans-serif;
+  position: relative;
+  padding: 15px 55px 15px 15px;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: background-color .25s linear;
+}
+.analytic:hover {
+  text-decoration: none;
+}
+.analytic:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  background: url(./assets/icons/arrow-right-white.svg) no-repeat 50% 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 0 5px 5px 0;
+}
+.analytic.audit {
+  background: #0ED9DC;
+}
+.analytic.audit:after {
+  background-color: #1EA2A4;
+}
+.analytic.audit:hover {
+  background-color: #0abbbe;
+}
+.analytic.time {
+  background: #DBD39F;
+}
+.analytic.time:after {
+  background-color: #BFB67A;
+}
+.analytic.time:hover {
+  background-color: #c8c090;
+}
+.analytic.rpa {
+  background: #9FD9DB;
+}
+.analytic.rpa:after {
+  background-color: #71B1B4;
+}
+.analytic.rpa:hover {
+  background-color: #7dbfc2;
+}
+.analytic.chart {
+  background: #499EDF;
+}
+.analytic.chart:after {
+  background-color: #367FB8;
+}
+.analytic.chart:hover {
+  background-color: #3d8fce;
+}
+.ng-select:focus {
+  outline: none;
+}
+.ng-select .ng-select-container {
+  border: none;
+  border-bottom: 1px solid #D6D6D6;
+  border-radius: unset;
+}
+.ng-select.ng-select-single .ng-select-container .ng-value-container .ng-input {
+  top: 0;
+}
+.ng-select.ng-select-focused:not(.ng-select-opened) > .ng-select-container {
+  border: none;
+  box-shadow: none;
+}
+.ng-select .ng-select-container .ng-value-container {
+  padding-left: 0;
+}
+.ng-select .ng-arrow-wrapper .ng-arrow {
+  border-color: #499EDF transparent transparent;
+}
+.ng-dropdown-panel {
+  border: none;
+}
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+  padding-left: 0;
+}
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected,
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected.ng-option-marked {
+  background: none;
+}
+.table-box {
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #D6D6D6;
+}
+.custom-tooltip {
+  display: inline-block;
+  background: url(./assets/icons/tool-tip.svg) no-repeat 0 0;
+  width: 12px;
+  height: 12px;
+  margin-left: 10px;
+  cursor: pointer;
+  position: relative;
+  font-size: 12px;
+  line-height: 14px;
+}
+.custom-tooltip span {
+  display: none;
+  position: absolute;
+  top: -42px;
+  left: 50%;
+  background-color: #eff3f5;
+  white-space: nowrap;
+  font-style: normal;
+  transform: translate(-50%, 0);
+  padding: 8px 10px;
+  border-radius: 6px;
+  color: #494949;
+}
+.custom-tooltip span:after {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(200, 200, 200, 0);
+  border-top-color: #eff3f5;
+  border-width: 6px;
+  margin-left: -6px;
+}
+.custom-tooltip:hover span {
+  display: inline-block;
+}
+.action-holder {
+  display: flex;
+  width: 55%;
+  align-items: center;
+  justify-content: space-around;
+}
+.email-btn {
+  display: inline-block;
+  width: 16px;
+  height: 13px;
+  cursor: pointer;
+  background: url(./assets/icons/email-grey.svg) no-repeat 0 0;
+}
+.email-btn:hover {
+  background: url(./assets/icons/email-blue.svg) no-repeat 0 0;
+}
+.delegatee-btn {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  cursor: pointer;
+  background: url(./assets/icons/account-icon-grey.svg) no-repeat 0 0;
+  background-size: cover;
+}
+.delegatee-btn:hover {
+  background: url(./assets/icons/account-icon-blue.svg) no-repeat 0 0;
+  background-size: cover;
+}
+.delete-btn {
+  width: 13px;
+  height: 16px;
+  display: inline-block;
+  cursor: pointer;
+  background: url(./assets/icons/delete.svg) no-repeat 0 0;
+}
+.delete-btn:hover {
+  background: url(./assets/icons/delete-red.svg) no-repeat 0 0;
+}
+.action-holder .hide {
+  display: none;
+}
+.tabulator .tabulator-header .tabulator-col.tabulator-sortable .tabulator-col-title {
+  position: relative;
+}
+.tabulator .tabulator-header .tabulator-col.tabulator-sortable .tabulator-col-title:after {
+ content: '';
+ width: 12px;
+ height: 12px;
+ position: absolute;
+ top: 50%;
+ left: auto;
+ margin-left: 10px;
+ transform: translate(0, -50%);
+ background: url(./assets/icons/tool-tip.svg) no-repeat 0 0;
+}
+.dashboard .tabulator .tabulator-header .tabulator-col.tabulator-sortable .tabulator-col-title:after {
+  content: none;
+}

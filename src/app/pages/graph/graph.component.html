@@ -1,0 +1,7 @@
+<div class="graph-holder">
+  <h1 *ngIf="!userExist; else userNotExist">{{chartInfo?.org_name}}</h1>
+  <ng-template #userNotExist>
+    <h1>Org Chart for this user doesn't exist</h1>
+  </ng-template>
+  <div style="width:100%; height:700px;" #orgchart id="orgchart"></div>
+</div>

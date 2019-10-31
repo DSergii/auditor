@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="12.8" viewBox="0 0 16 12.8">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path id="ic_create_new_folder_24px" class="cls-1" d="M16.4,5.6H10L8.4,4H3.6A1.588,1.588,0,0,0,2.008,5.6L2,15.2a1.594,1.594,0,0,0,1.6,1.6H16.4A1.594,1.594,0,0,0,18,15.2v-8A1.594,1.594,0,0,0,16.4,5.6ZM15.6,12H13.2v2.4H11.6V12H9.2V10.4h2.4V8h1.6v2.4h2.4Z" transform="translate(-2 -4)"/>
+</svg>

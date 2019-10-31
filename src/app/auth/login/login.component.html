@@ -1,0 +1,9 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <h1 class="login-logo" [ngClass]="{'success': successEmailSent}">Login</h1>
+  <strong class="title" *ngIf="!successEmailSent">Please provide your email and we'll send you a magic link to log you in.</strong>
+  <strong class="success" *ngIf="successEmailSent">Check your email!</strong>
+  <div class="input-holder">
+    <input type="text" placeholder="Email" formControlName="email">
+  </div>
+  <button type="submit" class="icon">Submit</button>
+</form>

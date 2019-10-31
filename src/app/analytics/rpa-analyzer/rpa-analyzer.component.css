@@ -1,0 +1,82 @@
+.chart-holder {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: flex-start;
+}
+.chart-holder canvas {
+  margin-right: 5%;
+}
+.wrapper {
+  width: 100%;
+  max-width: 1300px;
+  margin-right: 30px;
+}
+.table-box {
+  margin-bottom: 40px;
+}
+.carousel-holder {
+  width: 100%;
+  text-align: center;
+  padding: 20px 10px;
+  margin-bottom: 20px;
+  display: flex;
+  display: -ms-flexbox;
+  align-self: center;
+  justify-content: space-evenly;
+}
+.carousel-holder strong {
+  font-size: 28px;
+  line-height: 34px;
+  color: #494949;
+  display: inline-block;
+  padding: 0 20px;
+}
+.carousel-holder .btn {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #b4dfdf;
+  border-radius: 5px;
+  color: #494949;
+  cursor: pointer;
+  transition: background-color .25s linear;
+}
+.carousel-holder .btn:hover {
+  background-color: #B4DFDF;
+}
+.legend {
+  padding: 0;
+  margin: 0;
+}
+.legend li {
+  list-style: none;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  white-space: pre-wrap;
+  margin-bottom: 10px;
+  color: #494949;
+}
+.legend li span {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+@media (max-width: 1024px) {
+  .chart-holder {
+    display: block;
+  }
+  .chart-holder canvas {
+    margin: 0 auto 20px;
+  }
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .legend li {
+    width: 50%;
+  }
+}

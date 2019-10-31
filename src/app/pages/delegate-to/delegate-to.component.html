@@ -1,0 +1,24 @@
+<a class="back">Back</a>
+<div class="delegate-holder">
+  <h1>Assign <br/> {{nodeName}}</h1>
+  <form [formGroup]="delegateForm" (ngSubmit)="submit()">
+    <div class="form-element">
+      <input type="text" formControlName="first_name" placeholder="First Name">
+    </div>
+    <div class="form-element">
+      <input type="text" formControlName="last_name" placeholder="Last Name">
+    </div>
+    <div class="form-element">
+      <input type="text" formControlName="delegatee_email" placeholder="Email">
+    </div>
+    <div class="form-element last icon-input">
+      <input type="text"
+        placeholder="Deadline"
+        class="form-control"
+        formControlName="deadline"
+        bsDatepicker
+        [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'YYYY-MM-DD' }">
+    </div>
+    <button type="submit" class="icon">Send</button>
+  </form>
+</div>

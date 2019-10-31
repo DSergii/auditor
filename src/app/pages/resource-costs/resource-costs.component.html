@@ -1,0 +1,31 @@
+<div class="resource-costs">
+  <h1>{{title}}</h1>
+  <div class="form-holder">
+    <form [formGroup]="resourceCostForm">
+      <div class="form-element">
+        <label>{{tableFieldDict['annual_cost']}}</label>
+        <input type="text" rpaOnlynumber formControlName="annual_cost">
+      </div>
+      <div class="form-element">
+        <label>{{tableFieldDict['hours_per_day']}}</label>
+        <input type="text" rpaOnlynumber formControlName="hours_per_day">
+      </div>
+      <div class="form-element">
+        <label>{{tableFieldDict['days_per_week']}}</label>
+        <input type="text" rpaOnlynumber formControlName="days_per_week">
+      </div>
+      <div class="form-element">
+        <label>{{tableFieldDict['hours_per_year']}}</label>
+        <input type="text" rpaOnlynumber formControlName="hours_per_year">
+      </div>
+      <div class="form-element">
+        <label>{{tableFieldDict['days_per_year']}}</label>
+        <input type="text" rpaOnlynumber formControlName="days_per_year">
+      </div>
+      <div class="form-element">
+        <label>{{tableFieldDict['head_count']}}</label>
+        <input type="text" rpaOnlynumber formControlName="head_count">
+      </div>
+    </form>
+  </div>
+</div>

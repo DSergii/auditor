@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="12.8" viewBox="0 0 16 12.8">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffffff;
+      }
+    </style>
+  </defs>
+  <path id="email-delegatee" class="cls-1" d="M16.4,4H3.6A1.6,1.6,0,0,0,2.008,5.6L2,15.2a1.6,1.6,0,0,0,1.6,1.6H16.4A1.6,1.6,0,0,0,18,15.2V5.6A1.6,1.6,0,0,0,16.4,4Zm0,3.2-6.4,4-6.4-4V5.6l6.4,4,6.4-4Z" transform="translate(-2 -4)"/>
+</svg>

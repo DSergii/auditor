@@ -1,0 +1,20 @@
+<div class="process-breakdown">
+  <h1>Process Time Analytics</h1>
+  <div class="chart-holder">
+    <div class="process-box">
+      <h4>{{departmentProcessTitle.title}} <i class="custom-tooltip"><span *ngIf="departmentProcessTitle.tooltip">{{departmentProcessTitle.tooltip}}</span></i></h4>
+      <canvas id="process" #process width="710px" height="300px"></canvas>
+    </div>
+    <div class="hours-holder">
+      <h4>{{departmentHoursTitle.title}} <i class="custom-tooltip"><span *ngIf="departmentHoursTitle.tooltip">{{departmentHoursTitle.tooltip}}</span></i></h4>
+      <canvas id="hours" #hours width="500px" height="300px"></canvas>
+    </div>
+  </div>
+  <div class="table-box">
+    <div id="table" #table></div>
+  </div>
+  <div class="analytics-button-holder">
+    <a class="analytic time" [routerLink]="'/analytics/audit-status'">Audit Status</a>
+    <a class="analytic rpa" [routerLink]="'/analytics/rpa-analyzer'">RPA Analytics</a>
+  </div>
+</div>

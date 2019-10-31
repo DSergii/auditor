@@ -1,0 +1,14 @@
+<div class="audit-holder">
+  <h1>Audit Status</h1>
+  <div class="chart-holder">
+    <h4>{{auditTitle.title}} <i class="custom-tooltip"><span *ngIf="auditTitle.tooltip">{{auditTitle.tooltip}}</span></i></h4>
+    <canvas id="audit" #audit width="753px" height="252px"></canvas>
+  </div>
+  <div class="table-box">
+    <div id="table" #table></div>
+  </div>
+  <div class="analytics-button-holder">
+  <a class="analytic time" [routerLink]="'/analytics/process-breakdown'">Process Time Analytics</a>
+  <a class="analytic rpa" [routerLink]="'/analytics/rpa-analyzer'">RPA Analytics</a>
+</div>
+</div>

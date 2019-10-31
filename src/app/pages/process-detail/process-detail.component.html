@@ -1,0 +1,63 @@
+<div class="process-holder">
+  <form [formGroup]="processForm">
+    <div *ngFor="let data of processData; index as i">
+      <ng-container *ngTemplateOutlet="data.process_or_rpa_key === 'ProcessKey' ? process : rpa; context: data"></ng-container>
+      <ng-template #process>
+        <h1 *ngIf="i == 0"><span class="long-title">Process Detail: {{nodeName}}</span> <span class="update">{{processUpdate}}</span> </h1>
+        <div class="form-element"
+           [ngClass]="{'even': i%2 == 0, 'line': data.key_type.variable_type === 'Duration' || data.key_type.variable_type === 'Numeric' }">
+          <label [ngClass]="data.value_set | colorLabel">{{data.name}} <i class="custom-tooltip"><span *ngIf="data.tooltip">{{data.tooltip}}</span></i></label>
+          <div class="radio-holder" *ngIf="data.key_type.variable_type === 'Single Selector'">
+            <div class="c-radio" *ngFor="let lookup of data.lookup">
+              <input type="radio" id="{{lookup.key_string + data.key_id}}"
+                 [checked]="data.value_set == lookup.key_value"
+                 [value]="lookup.key_value"
+                 [formControlName]="data.key_id">
+              <label for="{{lookup.key_string + data.key_id}}">{{lookup.key_string}}</label>
+            </div>
+          </div>
+          <div *ngIf="data.key_type.variable_type === 'Duration'">
+            <rpa-counter [type]="'time'" [disable]="!data.key_editable" [formControlName]="data.key_id"></rpa-counter>
+          </div>
+          <div *ngIf="data.key_type.variable_type === 'Numeric'">
+            <rpa-counter [disable]="!data.key_editable" [formControlName]="data.key_id"></rpa-counter>
+          </div>
+          <div *ngIf="data.key_type.variable_type === 'Multi Selector'">
+            <div class="c-checkbox" *ngFor="let lookup of data.lookup; index as j">
+              <input type="checkbox" id="{{lookup.key_string + j}}"
+                [checked]="data.value_set.indexOf(lookup.key_value) > -1"
+                (change)="updateData(data.key_id, lookup.key_value)" [disabled]="!data.key_editable">
+              <label for="{{lookup.key_string + j}}">{{lookup.key_string}}</label>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template #rpa>
+        <h1 *ngIf="rpaPossition == data.key_id"><span class="long-title">RPA Detail: {{nodeName}}</span> <span>{{rpaUpdate}}</span></h1>
+        <div class="form-element" [ngClass]="{'even': i%2 == 0 }">
+          <label [ngClass]="data.value_set | colorLabel">{{data.name}} <i class="custom-tooltip"><span *ngIf="data.tooltip">{{data.tooltip}}</span></i></label>
+          <div class="radio-holder" *ngIf="data.key_type.variable_type === 'Single Selector'">
+            <div class="c-radio" *ngFor="let lookup of data.lookup;">
+              <input type="radio" id="{{lookup.key_string + data.key_id}}"
+                 [checked]="data.value_set == lookup.key_value"
+                 [value]="lookup.key_value" [formControlName]="data.key_id">
+              <label for="{{lookup.key_string + data.key_id}}">{{lookup.key_string}}</label>
+            </div>
+          </div>
+          <div *ngIf="data.key_type.variable_type === 'Duration'">
+            <rpa-counter [type]="'time'" [disable]="!data.key_editable" [formControlName]="data.key_id"></rpa-counter>
+          </div>
+          <div *ngIf="data.key_type.variable_type === 'Numeric'">
+            <rpa-counter [disable]="!data.key_editable" [formControlName]="data.key_id"></rpa-counter>
+          </div>
+          <div *ngIf="data.key_type.variable_type === 'Multi Selector'">
+            <div class="c-checkbox" *ngFor="let lookup of data.lookup; index as j">
+              <input type="checkbox" id="{{lookup.key_string + j}}" (change)="updateData(data.key_id, lookup.key_value)">
+              <label for="{{lookup.key_string + j}}">{{lookup.key_string}}</label>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </form>
+</div>

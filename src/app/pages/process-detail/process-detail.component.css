@@ -1,0 +1,141 @@
+.process-holder {
+  width: 100%;
+}
+.process-holder .form-element {
+  width: 100%;
+  padding: 18px 21px;
+  box-sizing: border-box;
+}
+.process-holder .form-element.line {
+  display: flex;
+}
+.process-holder .form-element.line label {
+  margin: 10px 25px 0 0;
+}
+.process-holder .form-element.even {
+  background-color: #EFF3F5;
+}
+.process-holder .form-element input[type=text] {
+  border-bottom: 1px solid #D6D6D6;
+  width: 100%;
+  max-width: 450px;
+  text-align: left;
+}
+.process-holder .form-element > label {
+  display: flex;
+  margin-bottom: 20px;
+  color: #494949;
+  font-size: 12px;
+  line-height: 14px;
+}
+.process-holder .form-element > label.empty {
+  color: #FF5D5D;
+}
+.c-checkbox {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+.radio-holder {
+  overflow: hidden;
+}
+.c-radio {
+  float: left;
+}
+.c-radio:first-child input[type="radio"] + label {
+  border-radius: 20px 0 0 20px;
+  border-left: 1px solid #6AA1F3;
+}
+.c-radio:last-child input[type="radio"] + label {
+  border-radius: 0 20px 20px 0;
+}
+.c-radio input[type="radio"]:not(:checked),
+.c-radio input[type="radio"]:checked,
+.c-checkbox input[type="checkbox"]:not(:checked),
+.c-checkbox input[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+.c-radio input[type="radio"] + label,
+.c-checkbox input[type="checkbox"] + label {
+  position: relative;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 20px;
+  margin: 0;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 16px;
+  border: 1px solid #6AA1F3;
+}
+.c-radio input[type="radio"]:not(:checked) + label,
+.c-checkbox input[type="checkbox"]:not(:checked) + label {
+  color: #494949;
+}
+.c-radio input[type="radio"]:checked + label,
+.c-checkbox input[type="checkbox"]:checked + label {
+  color: #fff;
+  background: #6AA1F3;
+}
+.c-radio input[type="radio"] + label {
+  min-width: 70px;
+  text-align: center;
+  border-radius: unset;
+  border-left: none;
+}
+h4.first-rpa {
+  padding-top: 40px;
+  margin-top: 40px;
+  border-top: 1px solid #D6D6D6;
+}
+input:disabled + label {
+  background-color: #fff !important;
+  color: #494949 !important;
+}
+input:checked:disabled + label {
+  background-color: #D6D6D6 !important;
+  color: #fff !important;
+}
+.c-radio:first-child input[type="radio"]:disabled + label {
+  border-left: 1px solid #D6D6D6;
+}
+.c-radio input[type="radio"]:disabled + label,
+.c-checkbox input[type="checkbox"]:disabled + label {
+  border-color: #D6D6D6;
+  cursor: default;
+}
+h1 .update {
+  font-size: 14px;
+  line-height: 21px;
+  color: #B2B2B2;
+  padding-left: 25px;
+  background: url(../../../assets/icons/clock.svg) no-repeat 0 50%;
+}
+.process-holder h1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.process-holder h4 {
+  margin-bottom: 15px;
+}
+.long-title {
+  width: 1250px;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  text-overflow: ellipsis;
+}
+
+::-webkit-input-placeholder {
+  color: #FF5D5D;
+}
+::-moz-placeholder {
+  color: #FF5D5D;
+}
+:-ms-input-placeholder {
+  color: #FF5D5D;
+}
+::placeholder {
+  color: #FF5D5D;
+}

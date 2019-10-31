@@ -1,0 +1,12 @@
+#container {
+  width: 100%;
+  padding-bottom: 30px;
+}
+.holder {
+  width: 100%;
+  max-width: 1570px;
+  margin: 0 auto;
+}
+.main-holder {
+  padding: 40px 15px 0 15px;
+}

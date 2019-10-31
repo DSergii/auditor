@@ -1,0 +1,26 @@
+<div class="rpa">
+  <h1>RPA Analytics</h1>
+  <div class="carousel-holder">
+    <span class="btn left" (click)="initPlot(plotIndex - 1)">&#10094;</span>
+    <strong>{{plotTitle.title}} <i class="custom-tooltip"><span *ngIf="plotTitle.tooltip">{{plotTitle.tooltip}}</span></i></strong>
+    <span class="btn right" (click)="initPlot(plotIndex + 1)">&#10095;</span>
+  </div>
+  <div class="chart-holder">
+    <div class="wrapper">
+      <canvas #rpa width="900px" height="475px"></canvas>
+    </div>
+    <ul class="legend">
+      <li *ngFor="let item of labels | keyvalue">
+        <span [style.backgroundColor]="item.value" class="bar"></span>
+        <b>{{item.key}}</b>
+      </li>
+    </ul>
+  </div>
+  <div class="table-box">
+    <div id="table" #table></div>
+  </div>
+  <div class="analytics-button-holder">
+    <a class="analytic rpa" [routerLink]="'/analytics/audit-status'">Audit Status</a>
+    <a class="analytic time" [routerLink]="'/analytics/process-breakdown'">Process Time Analytics</a>
+  </div>
+</div>

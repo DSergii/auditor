@@ -1,0 +1,6 @@
+<div class="auth-page" [ngClass]="{'exist': wrongEmail}">
+  <div class="form-holder" [@loginAnimation]>
+    <rpa-login *ngIf="!wrongEmail" (wrongEmail)="wrongEmail = $event"></rpa-login>
+    <rpa-contact *ngIf="wrongEmail" (back)="wrongEmail = $event" [email]="wrongEmail"></rpa-contact>
+  </div>
+</div>

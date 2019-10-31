@@ -1,0 +1,5 @@
+<span class="email" (click)="activeDropDown = !activeDropDown">{{email}}</span>
+<div class="drop-down" *ngIf="activeDropDown">
+  <a [routerLink]="'/settings'">Settings</a>
+  <a [routerLink]="'/login'">Logout</a>
+</div>

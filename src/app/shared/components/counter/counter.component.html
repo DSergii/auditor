@@ -1,0 +1,24 @@
+<div id="counter" [ngClass]="{'disable': disable}">
+  <div class="time-counter" *ngIf="type">
+    <button class="counter-btn minus" (click)="decrease('h')"></button>
+    <div class="input-holder">
+      <input type="text" #hours placeholder="0" rpaOnlynumber [disabled]="disable" (change)="update()">
+      <span class="mark">hrs</span>
+    </div>
+    <button class="counter-btn plus" (click)="increase('h')"></button>
+    <span class="separator">&nbsp;</span>
+    <button class="counter-btn minus" (click)="decrease('m')"></button>
+    <div class="input-holder">
+      <input type="text" #minutes placeholder="0" rpaOnlynumber [disabled]="disable" (change)="update()">
+      <span class="mark">min</span>
+    </div>
+    <button class="counter-btn plus" (click)="increase('m')"></button>
+  </div>
+  <div class="counter" *ngIf="!type">
+    <button class="counter-btn minus" (click)="decrease()"></button>
+    <div class="input-holder">
+      <input type="text" #counter placeholder="0" rpaOnlynumber [disabled]="disable" (change)="update()">
+    </div>
+    <button class="counter-btn plus" (click)="increase()"></button>
+  </div>
+</div>

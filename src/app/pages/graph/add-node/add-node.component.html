@@ -1,0 +1,21 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left" *ngIf="type === 'add'">Add {{nodeType}}</h4>
+  <h4 class="modal-title pull-left" *ngIf="type === 'edit'">Edit {{nodeType}} Name</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="form-holder">
+    <form [formGroup]="nodeForm">
+      <div class="form-element">
+        <label>Name</label>
+        <input type="text" formControlName="name" autofocus rpaAutofocus>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" *ngIf="type === 'add'" (click)="addNode()">Add</button>
+  <button type="button" class="btn btn-default" *ngIf="type === 'edit'" (click)="addNode()">Edit</button>
+</div>

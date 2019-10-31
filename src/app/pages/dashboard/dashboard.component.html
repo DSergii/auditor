@@ -1,0 +1,25 @@
+<div class="dashboard">
+  <div class="title-box">
+    <div class="title-holder">
+      <h1>Org Charts</h1>
+    </div>
+  </div>
+  <div class="charts-box">
+    <!--<ul class="chart-list" *ngFor="let chart of charts">-->
+      <!--<li (click)="showChart()">{{chart}}</li>-->
+    <!--</ul>-->
+    <a class="analytic chart" *ngIf="userOrganization" [routerLink]="'/graph'">{{userOrganization}}</a>
+  </div>
+  <div class="table-box">
+    <h2>Assignments & Status Detail</h2>
+    <div id="table" #table></div>
+  </div>
+  <div class="analytics-box">
+    <h2>Analytics</h2>
+    <div class="analytics-button-holder">
+      <a class="analytic audit" [routerLink]="'/analytics/audit-status'">Audit Status</a>
+      <a class="analytic time" [routerLink]="'/analytics/process-breakdown'">Process Time Analytics</a>
+      <a class="analytic rpa" [routerLink]="'/analytics/rpa-analyzer'">RPA Analytics</a>
+    </div>
+  </div>
+</div>

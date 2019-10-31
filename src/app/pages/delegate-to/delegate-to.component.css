@@ -1,0 +1,19 @@
+.delegate-holder {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 536px;
+  text-align: center;
+}
+.delegate-holder h1 {
+  font-size: 35px;
+  line-height: 40px;
+}
+.form-element {
+  width: 420px;
+  margin: 0 auto 29px;
+}
+.form-element.last {
+  margin-bottom: 40px;
+}

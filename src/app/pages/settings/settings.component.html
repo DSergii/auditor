@@ -1,0 +1,26 @@
+<div class="settings">
+  <form [formGroup]="settingsForm" (ngSubmit)="updateUser()">
+    <div class="separator">
+      <div class="form-element">
+        <input type="text" formControlName="first_name">
+      </div>
+      <div class="form-element">
+        <input type="text" formControlName="last_name">
+      </div>
+    </div>
+    <div class="form-element">
+      <ng-select [items]="location$ | async"
+         bindLabel="name"
+         bindValue="id"
+         formControlName="location_id"
+         [searchable]="false"
+         [clearable]="false">
+      </ng-select>
+    </div>
+    <button type="submit" class="icon save">Save</button>
+    <div class="delegator">
+      <strong>Delegator:  </strong>
+      <span> {{user.first_name}} {{user.last_name}}</span>
+    </div>
+  </form>
+</div>
