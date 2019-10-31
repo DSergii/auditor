@@ -22,7 +22,7 @@
     "@angular/router": "~8.2.0",
     "@balkangraph/orgchart.js": "^4.9.92",
     "@ng-select/ng-select": "^3.0.7",
-    "bootstrap": "4.1.1",
+    "bootstrap": "4.3.1",
     "chart.js": "^2.8.0",
     "core-js": "^2.5.4",
     "moment": "^2.24.0",
